@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'nmax'
+
+cli = Nmax::Cli.new('nmax', 5)
