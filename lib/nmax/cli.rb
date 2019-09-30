@@ -11,6 +11,7 @@ module Nmax
     def initialize(text, number)
       @text = text
       @number = number
+      validate!
     end
 
     def calculate_number
@@ -20,6 +21,15 @@ module Nmax
       else
         numbers_of_digit.max(number.to_i)
       end
+    end
+
+    private
+
+    def validate!
+      raise "Number can't be nil. Please enter the number of digits." if number.nil?
+      raise 'Strings are evil! Please enter a digit.' unless number.match?(/\d/)
+
+      true
     end
   end
 end
