@@ -3,4 +3,4 @@
 require 'nmax'
 
 ct = Nmax::Cli.new(STDIN.read, ARGV.first)
-p ct.calculate_number
+p ct.find_digits

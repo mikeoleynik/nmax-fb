@@ -15,15 +15,15 @@ RSpec.describe Nmax do
   end
 
   it "number of digit is exist" do
-    expect(cli[text, number].calculate_number).not_to be_nil
+    expect(cli[text, number].find_digits).not_to be_nil
   end
 
   it "return sorted numbers" do
-    expect(cli[text, number].calculate_number).to eq([2008, 7, 2])
+    expect(cli[text, number].find_digits).to eq([2008, 7, 2])
   end
 
   it "number of digit <= passed value" do
-    cli[text, number].calculate_number.size <= number.to_i
+    cli[text, number].find_digits.size <= number.to_i
   end
 
   it "if numbers of digit not passed, then raise error" do

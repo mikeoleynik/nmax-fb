@@ -8,13 +8,18 @@ module Nmax
 
     attr_reader :number, :text
 
+    # reads the transmitted text
+    # exception if number is not entered
+    # or setting incorrect type for the number of digits
     def initialize(text, number)
       @text = text
       @number = number
       validate!
     end
 
-    def calculate_number
+    # returns an array of digits if all is successful
+    # or message, if nothing not found
+    def find_digits
       numbers_of_digit = text.scan(REGEXP_FOR_FIND).map(&:to_i).uniq
       if numbers_of_digit.empty?
         'No digits found'
