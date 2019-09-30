@@ -2,5 +2,5 @@ require "nmax/version"
 
 module Nmax
   class Error < StandardError; end
-  # Your code goes here...
+  require_relative 'nmax/cli'
 end
