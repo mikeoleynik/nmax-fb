@@ -31,8 +31,8 @@ module Nmax
     private
 
     def validate!
-      raise "Number can't be nil. Please enter the number of digits." if number.nil?
-      raise 'Strings are evil! Please enter a digit.' unless number.match?(/\d/)
+      raise Nmax::Errors::InvalidValue if number.nil?
+      raise Nmax::Errors::InvalidType unless number.match?(/\d/)
 
       true
     end
