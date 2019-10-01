@@ -2,4 +2,5 @@
 
 require 'nmax'
 
-cli = Nmax::Cli.new('nmax', 5)
+ct = Nmax::Cli.new(STDIN.read, ARGV.first)
+p ct.find_digits
